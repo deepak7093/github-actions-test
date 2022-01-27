@@ -1,0 +1,7 @@
+- name: Job fail
+  run |
+    exit 1
+- name: Next job
+  if: always()
+  run |
+    echo Hello

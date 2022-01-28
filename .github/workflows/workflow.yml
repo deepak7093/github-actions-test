@@ -13,7 +13,7 @@ jobs:
         run: echo "jon fail"; exit 1
   job2:
     runs-on: ubuntu-latest
+    if: always()
     steps:     
       - name: Next job
-        if: always()
         run: echo "Hello"

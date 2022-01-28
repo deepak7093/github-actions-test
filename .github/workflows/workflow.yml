@@ -1,7 +1,17 @@
-- name: Job fail
-  run |
-    exit 1
-- name: Next job
-  if: always()
-  run |
-    echo Hello
+name: Test action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    steps:
+      - name: Job fail
+        run: echo "jon fail"; exit 1
+  job2:
+    steps:     
+    - name: Next job
+      if: always()
+      run: echo "Hello"

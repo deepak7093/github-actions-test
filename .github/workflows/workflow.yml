@@ -7,11 +7,13 @@ on:
 
 jobs:
   job1:
+    runs-on: ubuntu-latest
     steps:
       - name: Job fail
         run: echo "jon fail"; exit 1
   job2:
+    runs-on: ubuntu-latest
     steps:     
-    - name: Next job
-      if: always()
-      run: echo "Hello"
+      - name: Next job
+        if: always()
+        run: echo "Hello"
